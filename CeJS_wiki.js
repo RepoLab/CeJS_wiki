@@ -70121,5 +70121,10 @@ function module_code(library_namespace) {
 },
 "de-DE");
 
-
+//auto init at loading
+if (!window.CeL) window.CeL = { initializer : function() { CeL.run('application.net.wiki', initialization); } };
+	function initialization() {
+		console.trace(CeL.wiki.parse(`[[A|a]]`));
+		console.log("CeL ready");
+}
 CeL.run(CeL.get_old_namespace()?._initializer);
