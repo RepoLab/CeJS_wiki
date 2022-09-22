@@ -4142,6 +4142,7 @@ if (typeof CeL === 'function') {
 		 *      XMLHttpRequest Exception 101</a>
 		 */
 		function get_file(path, encoding, post_data) {
+			return undefined; //dirty workaround: standalone version should not load any other dependancy (on older Chrome-Browsers: /Data/code/compatibility.js )
 			if (_.is_Object(encoding)) {
 				post_data = encoding;
 				encoding = null;
