@@ -19742,6 +19742,7 @@ function module_code(library_namespace) {
 		library_namespace.run(sub_modules_to_full_module_path(sub_modules),
 		//
 		function() {
+			wiki_API.mw_web_session = false; //Dirty workaround: (optional) wiki_API failes to initialize (wiki_API.language_code_to_site_alias is undefined) -> skip it 
 			if (wiki_API.mw_web_session) {
 				wiki_API.mw_web_session = new wiki_API({
 					API_URL :
